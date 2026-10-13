@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mSPACE Rayong - Programming for Kid</title>
+
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/7.14.3/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/7.14.3/firebase-auth.js"></script>
+  <script defer src="/__/firebase/7.14.3/firebase-database.js"></script>
+  <script defer src="/__/firebase/7.14.3/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/7.14.3/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+
+  <style media="screen">
+    body {
+      background: lightgrey;
+      color: darkred;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+
+    #load {
+      color: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    #container {
+      display: flex;
+      justify-content: center;
+    }
+
+    #flyer {
+      width: 876px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      #flyer {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Courses</h1>
+  <div id="container">
+    <img id="flyer" src="images/mSPACE_FlyerKid.png" />
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+        console.debug(`Firebase SDK loaded with ${features.join(', ')}`);
+      } catch (e) {
+        console.error('Error loading the Firebase SDK.');
+        console.error(e);
+      }
+    });
+  </script>
+</body>
+
+</html>
